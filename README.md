@@ -9,7 +9,6 @@
 <img width="1919" height="1071" alt="Screenshot 2026-02-11 123823" src="https://github.com/user-attachments/assets/f444df17-c2e9-429d-a854-66ad5cf349db" />
 <img width="1919" height="1079" alt="Screenshot 2026-02-11 123834" src="https://github.com/user-attachments/assets/4f58e690-b583-4abb-ab35-69e50c4deba9" />
 <img width="1916" height="1069" alt="Screenshot 2026-02-11 124048" src="https://github.com/user-attachments/assets/f4a786a8-0de4-49dd-b634-6af3a46e2330" />
-
 ----"Dockerfile_python.py"---
 <img width="1902" height="1045" alt="Screenshot 2026-02-17 132909" src="https://github.com/user-attachments/assets/44a954dc-7dd2-4332-852f-1586cb421180" />
 <img width="1389" height="735" alt="Screenshot 2026-02-17 132926" src="https://github.com/user-attachments/assets/f3b16a7d-403d-4ff3-806d-ec2828ac10a1" />
