@@ -1,0 +1,313 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Install the latest PowerShell for new features and improvements! https://aka.ms/PSWindows
+
+PS C:\Users\hp>mkdir ghcr-demo
+
+
+    Directory: C:\Users\hp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        19-02-2026  12:31 PM                ghcr-demo
+
+
+PS C:\Users\hp> cd ghcr-demo
+PS C:\Users\hp\ghcr-demo> notepad dockerfile
+PS C:\Users\hp\ghcr-demo> notepad index.html
+PS C:\Users\hp\ghcr-demo> notepad index.html                       
+PS C:\Users\hp\ghcr-demo> ren dockerfile.txt dockerfile
+PS C:\Users\hp\ghcr-demo> docker build -t ghcr.io/harshit-mehta-lab/ghcr-demo .
+[+] Building 0.4s (1/1) FINISHED                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                       0.1s
+ => => transferring dockerfile: 103B                                                                                                       0.0s 
+dockerfile:2
+--------------------
+   1 |     FROM nginx:alpine
+   2 | >>> COPY index.html/usr/share/nginx/html/index.html
+--------------------
+ERROR: failed to build: failed to solve: dockerfile parse error on line 2: COPY requires at least two arguments, but only one was provided. Destination could not be determined
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/l722v5993u8gcztc5izka0ung
+PS C:\Users\hp\ghcr-demo> notepad dockerfile
+PS C:\Users\hp\ghcr-demo> docker build -t ghcr.io/harshit-mehta-lab/ghcr-demo .
+[+] Building 0.2s (1/1) FINISHED                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                       0.1s
+ => => transferring dockerfile: 98B                                                                                                        0.0s 
+dockerfile:2
+--------------------
+   1 |     FROM nginx:alpine
+   2 | >>> index.html/usr/share/nginx/html/index.html
+--------------------
+ERROR: failed to build: failed to solve: dockerfile parse error on line 2: unknown instruction: index.html/usr/share/nginx/html/index.html      
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/x6q69rpq0omuinjivdncpwtot
+PS C:\Users\hp\ghcr-demo> notepad dockerfile
+PS C:\Users\hp\ghcr-demo> notepad dockerfile
+PS C:\Users\hp\ghcr-demo> docker build -t ghcr.io/harshit-mehta-lab/ghcr-demo .
+[+] Building 2.4s (7/7) FINISHED                                                                                           docker:desktop-linux
+ => [internal] load build definition from dockerfile                                                                                       0.1s
+ => => transferring dockerfile: 104B                                                                                                       0.0s 
+ => [internal] load metadata for docker.io/library/nginx:alpine                                                                            0.2s 
+ => [internal] load .dockerignore                                                                                                          0.1s
+ => => transferring context: 2B                                                                                                            0.0s 
+ => [internal] load build context                                                                                                          0.1s
+ => => transferring context: 58B                                                                                                           0.0s 
+ => [1/2] FROM docker.io/library/nginx:alpine@sha256:b3c656d55d7ad751196f21b7fd2e8d4da9cb430e32f646adcf92441b72f82b14                      0.6s 
+ => => resolve docker.io/library/nginx:alpine@sha256:b3c656d55d7ad751196f21b7fd2e8d4da9cb430e32f646adcf92441b72f82b14                      0.1s 
+ => [2/2] COPY index.html /usr/share/nginx/html/index.html                                                                                 0.2s
+ => exporting to image                                                                                                                     0.8s 
+ => => exporting layers                                                                                                                    0.3s 
+ => => exporting manifest sha256:0a583aa7d0cefa95b51e36d90afdb56510906aee035b197ce277f72ebc6c097b                                          0.0s 
+ => => exporting config sha256:69d06520feb163b6ab36594a2ca07554d3ff5f0d1baf06aeec02917ef857a7b6                                            0.0s 
+ => => exporting attestation manifest sha256:66327c39867a41237f55fe26508e237919106d8cc884e95655e84ecea122cdf9                              0.1s 
+ => => exporting manifest list sha256:70ab4069b4e0be83f65f276656de8910439ab8baefb42c761624eeb883b57fae                                     0.0s 
+ => => naming to ghcr.io/harshit-mehta-lab/ghcr-demo:latest                                                                                0.0s 
+ => => unpacking to ghcr.io/harshit-mehta-lab/ghcr-demo:latest                                                                             0.1s 
+
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/yy9rpyyywta0yoat99pcxuzhg
+PS C:\Users\hp\ghcr-demo> dir
+
+
+    Directory: C:\Users\hp\ghcr-demo
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        19-02-2026  12:50 PM             67 dockerfile
+-a----        19-02-2026  12:42 PM             21 index.html
+
+
+PS C:\Users\hp\ghcr-demo> docker images
+i Info →   U  In Use
+IMAGEIDDISK USAGE   CONTENT SIZE   EXTRA
+alpine:latest                                                                                   25109184c71b       13.1MB         3.95MB    U   
+docker/desktop-kubernetes:kubernetes-v1.34.1-cni-v1.7.1-critools-v1.33.0-cri-dockerd-v0.3.20-1-debian
+                                                                                                12d6673564e0        591MB          184MB        
+ghcr.io/harshit-mehta-lab/ghcr-demo:latest                                                      70ab4069b4e0       79.8MB         22.6MB        
+harshitmehta2005/ap2:v1.1                                                                       381ea5fc7b35       33.6MB         10.1MB    U   
+httpd:latest                                                                                    dd178595edd6        177MB         47.6MB    U   
+mongo:latest                                                                                    6f55a078e025       1.27GB          333MB    U   
+mysql:8.0.44-debian                                                                             9a8352586030        812MB          183MB    U   
+mysql:latest                                                                                    6b18d01fb632       1.25GB          266MB    U   
+nginx:alpine                                                                                    b3c656d55d7a       79.8MB         22.6MB    U   
+nginx:latest                                                                                    c881927c4077        240MB         65.7MB    U   
+python11:latest                                                                                 348866545a8c        210MB         51.1MB    U   
+registry.k8s.io/coredns/coredns:v1.12.1                                                         e8c262566636        101MB         22.4MB        
+registry.k8s.io/etcd:3.6.4-0                                                                    e36c08168342        273MB         74.3MB        
+registry.k8s.io/kube-apiserver:v1.34.1                                                          b9d7c117f8ac        118MB         27.1MB        
+registry.k8s.io/kube-controller-manager:v1.34.1                                                 2bf47c1b01f5        101MB         22.8MB        
+registry.k8s.io/kube-proxy:v1.34.1                                                              913cc83ca0b5        102MB           26MB        
+registry.k8s.io/kube-scheduler:v1.34.1   6e9fbc4e25a5       73.5MB         17.4MB        
+     1.06MB          318kB
+ubuntu:latest                                                                                   cd1dba651b30        117MB         29.7MB    U   
+PS C:\Users\hp\ghcr-demo> docker login ghcr.io
+Username: harshit-mehta-lab
+Password:
+
+Error response from daemon: Get "https://ghcr.io/v2/": denied
+PS C:\Users\hp\ghcr-demo> docker login ghcr.io
+Username: harshit-mehta-lab
+Password:
+
+Login Succeeded
+PS C:\Users\hp\ghcr-demo> docker push ghcr.io/harshit-mehta-lab/ghcr-demo
+Using default tag: latest
+The push refers to repository [ghcr.io/harshit-mehta-lab/ghcr-demo]
+8cacc9d2f2f4: Pushed
+3eaba6cd10a3: Pushed
+8f6a6833e95d: Pushed
+ff8a36d5502a: Pushed
+194fa24e147d: Pushed
+bdabb0d44271: Pushed
+9e496fa3a581: Pushed
+2d35ebdb57d9: Pushed
+d9a55dab5954: Pushed
+df413d6ebdc8: Pushed
+latest: digest: sha256:70ab4069b4e0be83f65f276656de8910439ab8baefb42c761624eeb883b57fae size: 856
+PS C:\Users\hp\ghcr-demo> dir
+
+
+    Directory: C:\Users\hp\ghcr-demo
+
+
+Mode                 LastWriteTime         Length Name
+registry.k8s.io/etcd:3.6.4-0                                                                    e36c08168342        273MB         74.3MB        
+registry.k8s.io/kube-apiserver:v1.34.1                                                          b9d7c117f8ac        118MB         27.1MB        
+registry.k8s.io/kube-controller-manager:v1.34.1                                                 2bf47c1b01f5        101MB         22.8MB        
+registry.k8s.io/kube-proxy:v1.34.1                                                              913cc83ca0b5        102MB           26MB        
+registry.k8s.io/kube-scheduler:v1.34.1                                                          6e9fbc4e25a5       73.5MB         17.4MB        
+registry.k8s.io/pause:3.10                                                                      ee6521f290b2       1.06MB          318kB        
+registry.k8s.io/pause:3.10.1                                                                    278fb9dbcca9       1.06MB          318kB        
+ubuntu:latest                                                                                   cd1dba651b30        117MB         29.7MB    U   
+PS C:\Users\hp\ghcr-demo>notepad dockerfile
+PS C:\Users\hp\ghcr-demo> cd ..
+PS C:\Users\hp> cd devops_practical
+cd : Cannot find path 'C:\Users\hp\devops_practical' because it does not exist.
+At line:1 char:1
++ cd devops_practical
++ ~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\Users\hp\devops_practical:String) [Set-Location], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetLocationCommand
+ 
+PS C:\Users\hp> git clone https://github.com/harshit-mehta-lab/devops_practical.git
+Cloning into 'devops_practical'...
+remote: Enumerating objects: 47, done.
+remote: Counting objects: 100% (47/47), done.
+remote: Compressing objects: 100% (44/44), done.
+remote: Total 47 (delta 13), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (47/47), 914.02 KiB | 2.95 MiB/s, done.
+Resolving deltas: 100% (13/13), done.
+PS C:\Users\hp> dir                
+
+
+    Directory: C:\Users\hp
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        04-02-2026  09:46 PM                $HOME
+d-----        22-11-2025  07:19 PM                .aitk
+d-----        19-11-2025  07:06 PM                .antigravity
+d-----        25-01-2025  10:20 PM                .aws
+d-----        22-11-2025  07:09 PM                .azure
+d-----        16-11-2025  05:19 PM                .cache
+d-----        27-01-2026  12:49 PM                .cagent
+d-----        14-02-2026  08:29 PM                .claude
+d-----        14-02-2026  08:31 PM                .codex
+d-----        27-01-2026  12:49 PM                .config
+d-----        19-02-2026  06:07 PM                .docker
+d-----        19-11-2025  07:13 PM                .gemini
+d-----        17-02-2026  04:04 PM                .kube
+d-----        11-12-2025  12:11 PM                .m2
+d-----        26-01-2025  02:22 PM                .ms-ad
+d-----        12-06-2025  03:08 PM                .nx
+d-----        22-11-2025  06:13 PM                .redhat
+d-----        17-07-2025  09:55 PM                .ssh
+d-----        05-12-2025  04:07 PM                .VirtualBox
+d-----        14-02-2026  08:36 PM                .vs-kubernetes
+d-----        25-01-2025  03:38 PM                .vscode
+d-----        01-08-2025  06:30 PM                .vscode-server
+d-----        16-11-2025  05:33 PM                cake-shop-website
+d-r---        26-01-2025  05:44 PM                Contacts
+d-r---        17-02-2026  04:02 PM                Desktop
+d-----        22-11-2025  06:28 PM                dev-web-portfolio
+d-----        19-02-2026  06:20 PM                devops_practical
+d-----        17-02-2026  12:46 PM                dockerfile_prep_1
+d-----        13-02-2026  12:31 PM                dockerfile_prep_2
+d-----        13-02-2026  12:47 PM                dockerfile_prep_3
+d-----        18-02-2026  12:41 PM                docker_python1
+d-r---        28-01-2026  08:20 PM                Documents
+dar---        18-02-2026  07:43 PM                Downloads
+d-r---        26-01-2025  05:44 PM                Favorites
+d-----        19-02-2026  12:42 PM                ghcr-demo
+d-----        30-01-2026  12:10 AM                glucovibe-pro
+d-----        13-11-2025  12:34 PM                harshit_1386
+d-----        11-11-2025  12:14 PM                hm_prac1
+d-----        12-11-2025  12:24 PM                hm_pract3
+d-r---        26-01-2025  05:44 PM                Links
+d-----        21-11-2025  12:38 PM                minecraft
+d-r---        26-01-2025  05:44 PM                Music
+d-----        11-12-2025  12:48 PM                my-app
+d-----        11-12-2025  12:40 PM                my-app1
+d-----        17-12-2025  03:40 PM                my-app2
+d-----        17-12-2025  03:28 PM                my-webapp
+d-----        21-11-2025  11:14 PM                node_modules
+dar--l        22-11-2025  03:42 PM                OneDrive
+d-r---        12-01-2026  06:59 PM                Pictures
+d-----        05-12-2025  12:39 PM                pract3
+d-----        28-11-2025  12:27 PM                pract7
+d-----        19-11-2025  12:39 PM                prac_3
+d-----        17-02-2026  12:30 PM                python
+d-r---        26-01-2025  05:44 PM                Saved Games
+d-r---        21-03-2025  11:42 AM                Searches
+d-----        04-12-2025  12:48 PM                SmartShop
+d-r---        27-11-2025  02:20 PM                Videos
+d-----        16-10-2025  07:12 PM                VirtualBox VMs
+d-----        04-02-2025  10:47 AM                vscode-remote-wsl
+d-----        04-02-2026  11:26 AM                weather
+d-----        17-02-2026  09:25 PM                weathr
+d-----        17-12-2025  03:56 PM                web-demo
+-a----        17-02-2026  09:29 PM          15061 .bash_history
+-a----        11-11-2025  12:51 PM             94 .gitconfig
+-a----        22-11-2025  04:54 PM             14 .gitignore
+-a----        05-12-2025  12:54 PM             20 .lesshst
+-a----        16-11-2025  05:51 PM             94 .tetris-scores
+-a----        28-11-2025  12:53 PM            954 .viminfo
+-a----        05-12-2025  12:43 PM           1575 .viminfo.tmp
+-a----        24-11-2025  11:52 AM             88 docker-compose.yaml.txt
+-a----        12-11-2025  12:32 PM             21 harshit.txt
+-a----        21-11-2025  02:59 PM            351 hello.html
+-a----        21-11-2025  02:31 PM            456 index.html
+-a----        16-11-2025  05:48 PM           5232 package-lock.json
+-a----        16-11-2025  05:48 PM            111 package.json
+-a----        11-11-2025  12:16 PM             63 pracf1.txt
+-a----        11-11-2025  12:19 PM             66 pracf2.txt
+-a----        29-01-2026  11:10 PM          51243 setup_glucovibe.sh
+-a----        22-02-2025  01:38 PM            420 This PC - Shortcut.lnk
+
+
+PS C:\Users\hp>cd devops_practical
+PS C:\Users\hp\devops_practical> git checkout -b pract4-ghcr
+Switched to a new branch 'pract4-ghcr'
+PS C:\Users\hp\devops_practical> xcopy C:\Users\hp\ghcr-demo .\ghcr-demo\ /E /I
+C:\Users\hp\ghcr-demo\dockerfile
+C:\Users\hp\ghcr-demo\index.html
+2 File(s) copied
+PS C:\Users\hp\devops_practical> git add .
+PS C:\Users\hp\devops_practical> git commit -m "Added GHCR demo Docker project"
+[pract4-ghcr 3003837] Added GHCR demo Docker project
+ 2 files changed, 3 insertions(+)
+ create mode 100644 ghcr-demo/dockerfile
+ create mode 100644 ghcr-demo/index.html
+PS C:\Users\hp\devops_practical>git push origin pract4-ghcr
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 458 bytes | 152.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+remote:
+remote: Create a pull request for 'pract4-ghcr' on GitHub by visiting:
+remote:      https://github.com/harshit-mehta-lab/devops_practical/pull/new/pract4-ghcr
+remote:
+To https://github.com/harshit-mehta-lab/devops_practical.git
+ * [new branch]      pract4-ghcr -> pract4-ghcr
+PS C:\Users\hp\devops_practical> git checkout -b ghcr-practical4
+Switched to a new branch 'ghcr-practical4'
+PS C:\Users\hp\devops_practical> xcopy C:\Users\hp\ghcr-demo .\ghcr-demo\ /E /I
+Overwrite C:\Users\hp\devops_practical\ghcr-demo\dockerfile (Yes/No/All)? a
+C:\Users\hp\ghcr-demo\dockerfile
+C:\Users\hp\ghcr-demo\index.html
+2 File(s) copied
+PS C:\Users\hp\devops_practical> dir
+
+
+    Directory: C:\Users\hp\devops_practical
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+da----        19-02-2026  12:42 PM                ghcr-demo
+-a----        19-02-2026  06:20 PM          11236 alpine Practical
+-a----        19-02-2026  06:20 PM             54 ca1
+-a----        19-02-2026  06:20 PM           1597 README.md
+-a----        19-02-2026  06:20 PM              2 taging
+
+
+PS C:\Users\hp\devops_practical>git add .
+PS C:\Users\hp\devops_practical> git commit -m "Added GHCR Practical 4"
+On branch ghcr-practical4
+nothing to commit, working tree clean
+PS C:\Users\hp\devops_practical> git push origin ghcr-practical4
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: 
+remote: Create a pull request for 'ghcr-practical4' on GitHub by visiting:
+remote:      https://github.com/harshit-mehta-lab/devops_practical/pull/new/ghcr-practical4
+remote:
+To https://github.com/harshit-mehta-lab/devops_practical.git
+ * [new branch]      ghcr-practical4 -> ghcr-practical4
+PS C:\Users\hp\devops_practical> 
