@@ -52,3 +52,10 @@
 <img width="1393" height="744" alt="Screenshot 2026-02-19 181709" src="https://github.com/user-attachments/assets/ac161119-3327-415d-84a4-c8e23a9831c9" />
 <img width="1887" height="866" alt="Screenshot 2026-02-19 181819" src="https://github.com/user-attachments/assets/586d39a5-f4d1-4922-b46d-79b1fc690372" />
 
+<--Practical5 Deployment of WordPress with MySQL using Docker Compose -->
+------------------------------------------------------------------------------------------------------------------------------------------------------------ 
+<img width="1896" height="706" alt="Screenshot 2026-03-10 155348" src="https://github.com/user-attachments/assets/cc70eaf7-81a1-45a5-a54a-489095fe04a5" />
+<img width="1903" height="615" alt="Screenshot 2026-03-10 155408" src="https://github.com/user-attachments/assets/2d35a20c-124e-4335-9f3a-51a196a9abc3" />
+
+
+
