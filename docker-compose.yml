@@ -1,0 +1,31 @@
+services:
+  db:
+    image: mysql:5.7
+    container_name: wordpress_db2
+    restart: always
+    environment:
+      MYSQL_DATABASE: wpdatabase
+      MYSQL_USER: wpuser
+      MYSQL_PASSWORD: wppassword
+      MYSQL_ROOT_PASSWORD: rootpassword
+    volumes:
+      - db_data2:/var/lib/mysql
+
+  wordpress:
+    build: .
+    container_name: wordpress_app2
+    ports:
+      - "8083:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wpuser
+      WORDPRESS_DB_PASSWORD: wppassword
+      WORDPRESS_DB_NAME: wpdatabase
+    volumes:
+      - wordpress_data2:/var/www/html
+    depends_on:
+      - db
+
+volumes:
+  db_data2:
+  wordpress_data2:
